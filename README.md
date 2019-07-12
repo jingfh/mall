@@ -2,9 +2,9 @@
 ## Husky机械配件电商平台  实训总结
 
 # 说明
-## mall.sql 为数据库文件
-## 本机运行环境：
-MuEclipse CI 2018 + Mysql 5.7 + Google Chrome Browser
+## 1.mall.sql 为数据库文件
+## 2.本机运行环境：
+MyEclipse CI 2018 + Mysql 5.7 + Google Chrome Browser
 
 # 目录
 ## 一．	项目介绍
