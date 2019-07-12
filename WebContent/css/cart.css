@@ -1,0 +1,76 @@
+@charset "UTF-8";
+/*color:#fb4343;  红色   color:#41b6e7;  蓝色*/
+
+/*1.表单表头*/
+.shopcar_righ_top{ height:34px;background-color:#f3f3f3; overflow:hidden; border:1px solid #e0e0e0; border-top:3px solid #b1191a ; color:#666666;}
+/*div文字*/
+.shopcar_righ_top>div{float:left;text-align:center;line-height:30px;   margin-left:5px;}
+//.shopcar_infor00{width:70px;}
+.shopcar_infor01{width:200px;}
+.shopcar_infor02{width:126px;}
+.shopcar_infor03{width:172px;}
+.shopcar_infor04{width:200px;}
+.shopcar_infor05{width:60px;}
+
+
+
+/*2.商品列表内容*/
+.shop_car_probox{ width:902px; height:78px; display:block;border:1px solid #e0e0e0; margin:10px 0}
+.shop_car_probox>div{float:left;line-height:78px;text-align:center;border-left:1px solid #e0e0e0;padding-right:60px;padding-left:5px;height:78px;}
+.pro00 {width:10px;}
+.pro01 {width:120px;}
+.pro02 {width:66px;}
+.pro03 {width:150px;}
+.pro04 {width:66px;}
+.pro05 {width:80px;}
+.product_select_num_value{ padding: 25px 30px;  padding-right:0px;}
+.product_select_num_value input { display: block; width: 50px; height: 28px;line-height: 28px; border-left: 0; border-right: 0; border-top: solid 1px #d0d0d0; border-bottom: solid 1px #d0d0d0; outline: none; text-align: center;}
+
+/*自己添加的删除"按钮的格式*/
+.shop_car_probox>div>a:nth-child(1){font-size:18px; line-height:54px;color:#fb4343; display:block; text-align:center; margin-top:12px; margin-left:12px;font-weight:bold;}
+
+/*两个“-”“+”按钮*/
+.product_select_num_value a {height: 30px;width: 28px;}
+/*灰色“-”按钮*/
+.minus_btn{background: url(../images/common/no-minus_btn.png) no-repeat;}
+/*“+”按钮*/
+.plus_btn{background: url(../images/common/plus_btn.png) no-repeat;}
+
+
+
+
+/*3.结算*/
+.shop_car_buy{ height:54px; width:902px; background-color:#f3f3f3; margin-top:33px; margin-bottom:50px; overflow:hidden}
+/*"清空购物车"按钮*/
+.shop_car_buy>a:nth-child(1){font-size:18px; line-height:54px;color: #b1191a ; display:block; margin-left:43px}
+/*"提交订单"按钮*/
+.shop_car_buy>a:nth-child(2){margin-left:43px; background-color: #b1191a ; width:127px; display:block; text-align:center; color:#fff; line-height:54px; font-size:16px; font-weight:bold;}
+/*金额数*/
+.shop_car_buy span{text-align:center; font-size:26px; color: #b1191a ; }
+.shop_car_buy03{padding-top:8px;}
+.shop_car_buy04{padding-top:16px;}
+
+
+
+/*->已使用，，，，没用到，暂时不用*/
+/*4.空购物车*/
+.empty_cart_container{
+    margin-left: 410px;
+    margin-top: 150px;
+}
+.empty_cart_container .empty_title{
+    color:#B8B8B8;
+    font-size: 18px;
+    line-height: 39px;
+}
+.empty_cart_container .empty_target{
+    text-align: center;
+    width: 142px;
+    display: block;
+    color: #41b6e7;
+    font-size: 19px;
+}
+
+
+
+

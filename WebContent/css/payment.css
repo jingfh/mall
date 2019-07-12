@@ -1,0 +1,56 @@
+@charset "UTF-8";
+
+/*支付区域开始*/
+.pay_box{height:670px;width: 1000px;margin: 0 auto;margin-top: 20px;overflow: hidden;}
+/*二维码图片样式*/
+.pay_box>img{margin-top: 25px;   width: 100px;height: 100px;margin-left: auto;margin-right: auto; }
+/*订单编号*/
+.pay_box>p:nth-child(2){padding-right:621px;margin-top: 50px;}
+/*卖家*/
+.pay_box>p:nth-child(3){margin-left: 168px;margin-top: -40px;}
+/*金额*/
+.pay_box>p:nth-child(4){color: #b1191a;font-weight: 700;font-size: 22px;margin-top: -50px;}
+
+
+
+/*二维码下面支付框*/
+.pay_content{width:998px;height:360px;border-top:4px solid #b3b3b3;border-bottom:4px solid #b3b3b3;border-left:1px solid #b3b3b3;border-right:1px solid #b3b3b3;margin-top: 60px;}
+.pay_content strong {
+    font-weight: bold;
+    font-size: 14px;
+    color:#b1191a;
+}
+
+
+
+/*积分*/
+.pay_content>div:nth-child(1){margin: 0px 25px;}
+
+
+
+/*第一行蓝框*/
+.pay_content>div:nth-child(2){height:50px;width: 800px;margin: 15px auto;border:4px solid #b1191a;}
+/*"支付宝"文本*/
+.pay_content>div:nth-child(2)>p:nth-of-type(1){margin-top: -37px;margin-left: 75px;   margin-top: -20px;}
+/*“支付 。。。。。元”*/
+.pay_content>div:nth-child(2)>p:nth-of-type(2){margin: -24px 20px;    margin-top: -23px;}
+.pay_content>div:nth-child(2) span{font-size: 16px;color: #ff8208;font-weight: 700;}
+/*radio单选按钮*/
+.pay_content>div:nth-child(2) input{margin-left: 25px;margin-top: 18px;}
+/*支付宝标志图片样式*/
+.pay_content>div:nth-child(2) img{width:20px; height:20px;margin-left: 8px;margin-top: 14px;}
+
+
+/*第二行“支付宝支付密码:”*/
+//.pay_content>div:nth-child(3){font-size:18px;padding: 20px 25px;}
+/*第三行密码输入框*/
+//.pay_content>div:nth-child(4) input{width: 150px;height: 35px;outline: none;margin-left: 25px;padding-left: 10px;font-size: 30px;letter-spacing: 4px;border-radius: 4px;}
+/*第四行提示“请输入6位数字支付密码”*/
+
+
+.hint{color: #b2b2b2;margin: -80px 25px;}
+
+
+
+/*“确认付款”按钮*/
+.paynow{color: #fff;border: 1px solid #0ae;background-color: #b1191a;height: 36px;width: 80px;border-radius: 2px;font-weight: 700;margin: 25px 25px}

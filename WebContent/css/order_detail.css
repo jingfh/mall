@@ -1,0 +1,60 @@
+@charset "utf-8";
+
+
+
+.user_order_detail{ margin:40px 15px 0px,200px; border:2px solid #b1191a; position:relative; padding:20px; overflow: hidden;}
+.user_order_detail dt{font-size:13px; font-weight:bold;   margin-top:3px;margin-left:10px;}
+.user_order_detail dl{ padding-bottom:20px; border-bottom: solid 1px black;}
+.user_order_detail dd{line-height: 30px;margin-left:20px;}
+
+
+.user_order_detail>div>dl:nth-child(2){margin-top: 20px;}
+.user_order_detail>div>dl:nth-child(3){margin-top:22px;border-bottom: none;}
+.user_order_detail>div>dl:nth-child(3)>dd{ float: left; width: 50%;}
+
+
+
+
+/*订单表格*/
+.table_bordered{border: 1px solid #dddddd;width: 100%;border-collapse:collapse; margin-top:12px;}
+/*表头*/
+.table_bordered thead{color: #404040;background: #f1f1f1;  }
+.table_bordered thead>tr{height:60px;font-size: 13px;}
+.table_bordered thead>tr{border:1px solid #ddd}
+/*表体*/
+.table_bordered tbody td{text-align: center; border:1px solid #ddd;height:80px;}
+
+
+/*添加 立即支付 按钮格式*/
+.paynow{
+	background-color: #b1191a ; 
+	color: #fff; 
+	box-sizing: border-box;
+	display: inline-block;
+	border: none;
+	height: 28px;
+	line-height: 26px;
+	padding: 0 9px;
+	border-radius: 3px;
+	font-size: 12px;
+	cursor: pointer;
+	margin-left:35px;
+	margin-top:12px;
+}
+
+.ordercancle {
+	background-color: #b1191a ; 
+	color: #fff; 
+	box-sizing: border-box;
+	display: inline-block;
+	border: none;
+	height: 28px;
+	line-height: 26px;
+	padding: 0 9px;
+	border-radius: 3px;
+	font-size: 12px;
+	cursor: pointer;
+	margin-left:35px;
+	margin-top:12px;
+}
+

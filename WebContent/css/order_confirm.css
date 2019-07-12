@@ -1,0 +1,46 @@
+@charset "UTF-8";
+
+/*上方的地址框*/
+.address_list{padding-bottom:38px; border-bottom:solid 1px #e8e8e8; clear:both; overflow:hidden;}
+/*选择收货地址*/
+.content_tit{ font-size:20px; line-height:54px;color:#454545; font-weight:bold; }
+.address_list li{width:237px;float:left; margin-right:2%; cursor:pointer;} 
+
+/*此处的边框为选中时，没选中时，为 shdz_bg.gif */
+.address_list .address_box_off{padding:10px 15px; position:relative; background: url(../images/common/shdz_bg.gif) no-repeat 0 0;}
+.address_list .address_box_on{padding:10px 15px; position:relative; background: url(../images/common/shdz_bgon.gif) no-repeat 0 0;}
+
+.address_list strong{display:block; border-bottom:#dddddd 1px solid; height:22px; line-height:22px; margin-bottom:3px; font-weight:normal;}
+
+.text {line-height:20px; height:40px; overflow:hidden; margin-bottom:2px;}
+.address_box_off a{color: #b1191a ; margin-right:66px;}
+.address_box_off>span{ height:20px;line-height:20px; padding:0 5px; background:#f2f2f2; color:#555; position:absolute; top:0px; right:0px;}
+.address_box_on a{color: #b1191a ; margin-left:60px;}
+.address_box_on>span{ height:20px;line-height:20px; padding:0 5px; background:#f2f2f2; color:#555; position:absolute; top:0px; right:0px;}
+
+/*“更换地址”按钮格式*/
+.add_address{cursor:pointer; font-size:18px; color: #b1191a; text-decoration:underline; 
+margin-top:86px; width:auto; 
+  margin-left:668px;}
+
+/*地址框*/
+.address_item{margin-left:33px;margin-top:10px;}
+
+
+
+/*下方表单前面使用的是cart和common里的之前购物车相关格式*/
+/*重定义"提交订单"按钮格式,这里将原来cart的.shop_car_buy>a:nth-child(2)的格式赋给(1) */
+.shop_car_buy>a:nth-child(1){margin-left:43px; 
+background-color:  #b1191a    ; 
+width:127px; display:block; text-align:center; color:#fff; line-height:54px; font-size:16px; font-weight:bold;}
+
+.shopcar_infor001{width:284px;}
+.shopcar_infor002{width:156px;}
+.shopcar_infor003{width:198px;}
+.shopcar_infor004{width:230px;}
+
+.pro001 {width:300px;}
+.pro002 {width:100px;}
+.pro003 {width:100px;}
+.pro004 {width:100px;}
+

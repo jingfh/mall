@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<!-- 将来需要实现的功能（预留）：
+	1.用户名与密码确认，
+	->密码正确，跳转到首页
+	->密码错误，输出错误信息
+*2.添加 注册 页面链接，  已添加
+*3.添加 找回密码 页面链接    已添加
+ -->
+<html>
+<head>
+	<title>登录</title> 
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/common.css">
+    <link rel="stylesheet" type="text/css" href="css/login.css">
+    
+    <!-- 引入require.js，注意格式 --> 
+    <script src="js/require.js" defer async="true" data-main="js/login_main"></script>
+    
+</head>
+<body>
+	<!-- 头部标签 -->
+	<div>
+		<div class="action_search_box content_box">
+	    	<a class="logo" href="index.html"></a>
+	    </div>
+	    <!--与之前不同，加分割线-->
+	    <hr style="height: 1px; border: none; border-top: 1px solid #DDD; margin: 25px 0 0px;">
+    </div>
+
+    <!-- 中间登录 -->
+    <!-- action="#"表示将form信息传回本页，以进行客户端校验 -->
+	<form id="loginForm" action="#" method="post" novalidate="novalidate">
+		<div class="login_box">
+			<div class="login_box_left">
+		    	<h1>一个账号，玩转商城所有服务！</h1>
+		        <h2>购机械，购二手装备，购配件，购模型，服务保修</h2>
+		        
+		        <!-- 提示信息，默认隐藏 -->
+		        <div class="login-tip" style="display: none;">*您的账号密码不匹配，请重新输入</div>
+		        
+		        <div class="login_name_box">
+		        	<div class="login_name_icon"></div>
+		        	<input type="text" id="username" name="username" class="loginname" maxlength="25" tabindex="1" placeholder="用户名/已验证的手机号码">
+		        </div>
+		        <div class="check_code_tip" id="usernameError" style="display: none;"></div>
+		       
+		        <!-- 密码框 -->
+		        <div class="login_code_box">
+		        	<div class="login_code_icon"></div>
+		        	<input type="password" id="password" name="password" class="logincode" maxlength="20" tabindex="2" autocomplete="off" placeholder="密码">
+		        </div>
+		        <!-- 提示信息 -->
+		        <div class="check_code_tip" id="passwordError" style="display: none;"></div>
+		        
+
+		         <div class="forg_code_box">
+		         <!-- 暂时去除这个功能，需要cookie
+		    		<input type="checkbox" id="isRememberUsername" name="isRememberUsername" value="true" tabindex="4">
+		            <span>&nbsp;&nbsp;&nbsp;记住用户名</span>
+		           -->
+		            
+		            
+<!-- 这里是预留的忘记密码页面 ，已添加-->
+		            <a href="password_back.html" class="forgetpwd">忘记密码</a>
+<!-- 这里.jhtml是预留的注册页面，已添加 -->
+		            <a href="register.html" class="register">免费注册</a>
+		   		 </div>
+<!-- 密码正确，登录页面跳转 -->
+		         <input type="button" class="login_btn" style="width:341px;cursor:pointer;" value="登&nbsp;&nbsp;&nbsp;录">
+		    </div>
+		     
+		    <div class="login_box_right">
+		    </div>
+		</div>
+	</form>
+	
+	<!-- 底部特色描述 -->
+	<div class="content_box" id="product_service">
+    	<ul>
+    		<li class="item l">
+    			<p class="item_icon icon1 l"></p>
+    			<div class="item_text l">
+    				<p class="text_tit">真实货源</p>
+    				<p class="text_info">一手货源&nbsp;真实存在</p>
+    			</div>
+    		</li>
+    		<li class="item l">
+    			<p class="item_icon icon2 l"></p>
+    			<div class="item_text l">
+    				<p class="text_tit">品质保障</p>
+    				<p class="text_info">垂直专业&nbsp;优选厂商</p>
+    			</div>
+    		</li>
+    		<li class="item l">
+    			<p class="item_icon icon3 l"></p>
+    			<div class="item_text l">
+    				<p class="text_tit">服务保障</p>
+    				<p class="text_info">专业服务团队</p>
+    			</div>
+    		</li>
+    		<li class="item l">
+    			<p class="item_icon icon4 l"></p>
+    			<div class="item_text l">
+    				<p class="text_tit">交易透明</p>
+    				<p class="text_info">买卖双方面谈价格</p>
+    			</div>
+    		</li>
+    	</ul>
+    </div>
+    <!-- 版权信息 -->
+    <div class="copyright_bgcolor">
+    	<div class="copyright">Copyright © 2018 XXX有限公司 版权所有 保留一切权利 鲁ICP备XXXXXXXX号-X</div>
+    </div>
+    
+</body>
+</html>

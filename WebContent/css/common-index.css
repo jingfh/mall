@@ -1,0 +1,239 @@
+@charset "utf-8";
+body {
+    position: relative;
+    min-width: 1200px;
+    background: #ffffff;
+}
+
+/*内容盒子*/
+.content_box {
+    width: 1100px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.wrapper_box {
+    width: 1200px;
+    margin: 0 auto;
+    overflow: hidden
+}
+
+/*头部导航*/
+.header_outbox {
+	width: 100%;
+    position: fixed;
+    background-color: #f3f3f3;
+    height: 36px;
+    border-bottom: 1px solid #dcdcdc;
+    color: #666666;
+    font-size: 13px;
+    z-index:9999
+}
+
+.header_inbox {
+    width: 1100px;
+    margin: 0 auto;
+}
+
+.header_inbox p {
+    float: left;
+    line-height: 36px;
+    color: #666666;
+}
+
+.header_inbox a {
+    float: left;
+    line-height: 36px;
+    color: #666666;
+}
+
+.header_inbox .login {
+    color: #b1191a
+}
+
+.header_inbox img {
+    float: left;
+    margin-top: 11px
+}
+
+.my_action {
+    float: right;
+}
+
+.my_action li {
+    float: right
+}
+
+.my_action li img {
+    margin-left: 15px;
+    margin-right: 5px
+}
+
+/*服务*/
+#product_service {
+    height: 98px;
+    margin: 20px auto;
+}
+
+#product_service li {
+    float: left;
+    width: 25%;
+}
+
+/*产品服务中显示的图*/
+#product_service li > p {
+    width: 49px;
+    height: 51px;
+    margin: 22px 17px 0 25px;
+    background-image: url(../images/common/mod-list.png);
+    float: left;
+}
+
+/*控制四个图的位置*/
+#product_service li:nth-of-type(1) > p {
+    background-position: -0px 0px;
+}
+
+#product_service li:nth-of-type(2) > p {
+    background-position: -0px -150px;
+}
+
+#product_service li:nth-of-type(3) > p {
+    background-position: -0px -100px;
+}
+
+#product_service li:nth-of-type(4) > p {
+    background-position: -0px -50px;
+}
+
+/*图旁的文字左浮动*/
+#product_service li > div {
+    float: left;
+}
+
+/*图旁的文字第一行*/
+#product_service li > div > p:nth-of-type(1) {
+    margin-top: 26px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #1f1f1f;
+    line-height: 26px;
+}
+
+/*图旁的文字第二行*/
+#product_service li > div > p:nth-of-type(2) {
+    font-size: 12px;
+    color: #424242;
+}
+
+/*底部*/
+.footerbox {
+    border-top: 1px solid #dcdcdc;
+}
+
+.footer {
+    background-color: #b1191a;
+    padding-top: 30px;
+    padding-bottom: 50px;
+    overflow: hidden
+}
+
+.content_box > div {
+    float: left;
+    padding-left: 20px;
+    padding-right: 120px;
+}
+
+.content_box > div h1 {
+    color: #fff;
+    font-size: 16px;
+    line-height: 30px
+}
+
+.content_box > div a {
+    color: #fff;
+    font-size: 12px;
+    display: block;
+    padding: 4px 0
+}
+
+.copyright_bgcolor {
+    background-color: #f3f3f3;
+}
+
+.copyright {
+    color: #4c4c4c;
+    text-align: center;
+    padding: 20px 0px;
+}
+/*头部Logo和搜索开始*/
+.action_search_box {
+    overflow: hidden;
+    padding-top: 18px
+}
+
+.logo {
+    background-image: url(../images/common/logo.png);
+    background-repeat: no-repeat;
+    display: block;
+    width: 199px;
+    height: 60px;
+    float: left;
+    margin-right: 132px
+}
+
+.inputbox {
+    float: left;
+    height: 58px;
+    padding-top: 2px;
+    width: 540px;
+    line-height: 58px;
+}
+
+.inputbox input {
+    line-height: 35px;
+}
+
+.inputbox input {
+    width: 438px;
+    height: 35px;
+    border: #b1191a 2px solid;
+    font-size: 14px;
+    color: #333333;
+    padding-left: 4px;
+    outline: none;
+    float: left
+}
+
+.searchbtn {
+    width: 84px;
+    background-color: #b1191a;
+    height: 35px;
+    font-size: 13px;
+    display: block;
+    line-height: 35px;
+    float: left;
+    text-align: center;
+    color: #ffffff;
+}
+
+.hotword {
+    float: none;
+    line-height: 19px;
+    clear: both;
+    color: #999999;
+    width: 524px;
+    padding-top: 4px
+}
+
+.hotword a {
+    color: #999999;
+    border-right: 1px #c2c1c1 solid
+}
+
+.telephonenumber { 
+	margin-left: 150px;
+	float: left
+}
+
+/*头部Logo和搜索结束*/

@@ -1,0 +1,64 @@
+@charset "UTF-8";
+
+.right_nav{ width: 900px; height: 32px; margin-bottom: 30px; border-bottom: solid 2px #e8e8e8;}
+.right_nav li{ display: block; padding: 0 25px; border-bottom: solid 2px transparent; font-size: 16px; color: #66656a; text-align: center; line-height: 32px; cursor: pointer;
+float:left;}
+.right_nav>div{font-size: 12px; color: #666; line-height: 32px;}
+.right_nav li.on{
+	color: #b1191a ;
+    border-color: #b1191a 
+;}
+.right_nav li.on:after{content: ""; position: absolute; bottom: 0; left: 50%; width: 0; height: 0; margin-left: -3px; border-left: solid 4px transparent; border-right: solid 4px transparent; border-bottom: solid 6px #b1191a 
+;}
+
+/*表头*/
+//.user_order {overflow:scroll;}
+.user_order>div:nth-child(1){height: 46px; margin-bottom: 25px; border: solid 1px #ddd; color: #4f4f4f; text-align: center; line-height: 46px; background-color: #f5f5f5;}
+.user_order>div:nth-child(1)>:nth-child(1){float:left;width: 238px;text-align:left;margin-left:42px}
+.user_order>div:nth-child(1)>:nth-child(2){float:left;width: 100px;}
+.user_order>div:nth-child(1)>:nth-child(3){float:left;width: 108px;}
+.user_order>div:nth-child(1)>:nth-child(4){float:left;width: 106px;}
+.user_order>div:nth-child(1)>:nth-child(5){float:left;width: 170px;}
+.user_order>div:nth-child(1)>:nth-child(6){float:left;width: 103px;}
+
+/*这里修改每个订单样式*/
+.list_item{margin-bottom: 30px; border: solid 2px #b1191a;}
+
+/*这是表头格式*/
+.list_item>div:nth-child(1){ border-bottom: solid 1px #ddd; line-height: 40px; background-color: #f1faff;height:40px;}
+/*订单编号*/
+.list_item>div:nth-child(1)>:nth-child(1){margin: 0 10px;float:left;}
+/*中间三个“下单时间” “收货人” “订单状态”*/
+.list_item>div:nth-child(1)>p{margin: 0 10px;float:left;}
+/*"查看订单"*/
+.list_item>div:nth-child(1)>:nth-child(5){margin-left: 10px;float:left; color: #ff1a1a;}
+
+/*这是表单格式*/
+.order_list_content{ height: 100px;text-align: center;line-height: 100px;}
+/*表单内容格式*/
+.order_list_content>div:nth-child(1){float:left;width: 196px;text-align:left;margin-left:42px}
+.order_list_content>div:nth-child(2){float:left;width: 100px;margin-left:-100px}
+.order_list_content>div:nth-child(3){float:left;width: 108px;}
+.order_list_content>div:nth-child(4){float:left;width: 106px;}
+.order_list_content>div:nth-child(5){float:left;width: 170px;}
+.order_list_content>div:nth-child(6){float:left;width: 106px;margin-top: -15px;}
+
+
+
+/*按钮格式*/
+.btn{background-color:  #b1191a ;color: #fff;box-sizing: border-box;display: inline-block;border: none;height: 28px;
+line-height: 26px;border-radius: 3px;font-size: 12px;cursor: pointer;width:60px; text-align: center;}
+
+
+
+
+
+
+
+/*底部分页区域格式*/
+.page{ height: 32px; margin-top: 30px; margin-bottom: 50px; font-size: 14px; color: #898989; line-height: 32px; text-align: center;}
+.page a,.page input{display: inline-block; }
+.page>a{ width: 88px; height: 30px; margin-left: 4px; border: solid 1px #e5e5e5; }
+.page>span>a{width: 30px; height: 30px; margin-left: 4px; border: solid 1px #e5e5e5;}
+.page>a:hover,.page>span>a:hover,.page input:nth-child(2):hover {color: #fff; background: #0087ce;}
+.page>span:nth-child(4){ margin-left: 8px; margin-right: 36px;}

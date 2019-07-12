@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<!-- 将来需要实现的功能（预留）：
+	1.密码两次的确认，
+	->密码匹配，输出通过信息
+	->密码不匹配，输出错误信息
+	2.为用户名，密码，手机，邮箱加filter，进行形式上有效性确认validation，并输出错误信息
+	3.密码提示问题的显示，答案比对
+	->答案匹配，输出通过信息
+	->答案不匹配，输出错误信息
+	4.添加 网络服务协议 页面链接
+	5.添加 找回密码 页面链接
+ -->
+<html>
+<head>
+	<title>注册</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/common.css">
+    <link rel="stylesheet" type="text/css" href="css/register.css">
+    
+    <!-- 引入require.js，注意格式 --> 
+    <script src="js/require.js" defer async="true" data-main="js/register_main"></script>
+    
+</head>
+<body>
+	<!-- 头部标签 -->
+	<div>
+		<div class="action_search_box content_box">
+	    	<a class="logo" href="index.html"></a>
+	    </div>
+	    <!--与之前不同，加分割线-->
+	    <hr style="height: 1px; border: none; border-top: 1px solid #DDD; margin: 25px 0 0px;">
+    </div>
+    
+    <!-- 中间注册 -->
+    <div>
+        <!-- 注册内容 -->
+        <form id="registerForm" action="#" method="post" novalidate="novalidate">
+            <div class="register_box">
+                <h1 >注册账号，玩转商城所有服务！</h1>
+                <div>
+                    <div>用户名：</div>
+                    <input type="text" id="username" name="username" maxlength="25" placeholder="3-16个英文字母">
+                    <div class="error_tip" id="usernameError">请输入用户名</div>
+                </div>               
+                <div>
+                    <div>密码：</div>
+                    <input type="password" id="password" name="password" style="ime-mode:disabled;" maxlength="20" autocomplete="off">
+                    <div class="error_tip" id="userpasswordError">请输入密码</div>
+                </div>
+                <div>
+                    <div>确认密码：</div>
+                    <input type="password" id="rePassword" name="rePassword" style="ime-mode:disabled;" maxlength="20" autocomplete="off">
+                    <div class="error_tip" id="repasswordError">请再次输入密码</div>
+                </div>
+                <div>
+                    <div>手机：</div>
+                    <input type="text" id="phone" name="phone"  maxlength="11">
+                    <div class="error_tip" id="phoneError">请输入手机</div>
+                </div>
+                <div>
+                    <div>邮箱：</div>
+                    <input type="text" id="email" name="email">
+                    <div class="error_tip" id="emailError">请输入邮箱</div>
+                     
+                </div>
+                <div>
+                    <div>密码提示问题：</div>
+                    <input type="text" id="question" name="question" >
+                    <div class="error_tip" id="questionError">请输入密码提示问题</div>
+                </div>
+                
+                <div>
+                    <div>密码提示答案：</div>
+                    <input type="text" id="answer" name="answer"  >
+                    <div class="error_tip" id="answerError">请输入密码提示答案</div>
+                </div>
+                
+                <div >
+                    <input id="protocal" class="protocal"  type="checkbox" checked="checked"  >
+<!-- 预留的网络服务协议页面链接 -->
+                    <div>
+                    	我已经看过并同意《
+                    	<a href="软件许可及用户协议.pdf" target="_blank" style="color:#b1191a ;">
+                    	<!-- <a href="https://privacy.qq.com/" target="_blank" style="color:#41b6e7;"> -->
+                    		软件许可及服务协议
+                    	</a>
+                    	》
+                    	<div class="error_tip" id="protocalError">同意协议才可注册</div>
+                    </div>
+<!-- 感觉这里是为了后续的服务协议没有打勾选中时显示的错误信息 ,,对-->
+                    
+                </div>
+                
+                <input type="button" class="register_btn" value="立即注册">
+
+<!--  这里预留的 找回密码页面 -->
+                <a href="password_back.html" class="password_back">已注册，找回密码</a>
+            </div>
+        </form>
+    
+	    <!-- 底部特色描述 -->
+		<div class="content_box" id="product_service">
+	    	<ul>
+	    		<li class="item l">
+	    			<p class="item_icon icon1 l"></p>
+	    			<div class="item_text l">
+	    				<p class="text_tit">真实货源</p>
+	    				<p class="text_info">一手货源&nbsp;真实存在</p>
+	    			</div>
+	    		</li>
+	    		<li class="item l">
+	    			<p class="item_icon icon2 l"></p>
+	    			<div class="item_text l">
+	    				<p class="text_tit">品质保障</p>
+	    				<p class="text_info">垂直专业&nbsp;优选厂商</p>
+	    			</div>
+	    		</li>
+	    		<li class="item l">
+	    			<p class="item_icon icon3 l"></p>
+	    			<div class="item_text l">
+	    				<p class="text_tit">服务保障</p>
+	    				<p class="text_info">专业服务团队</p>
+	    			</div>
+	    		</li>
+	    		<li class="item l">
+	    			<p class="item_icon icon4 l"></p>
+	    			<div class="item_text l">
+	    				<p class="text_tit">交易透明</p>
+	    				<p class="text_info">买卖双方面谈价格</p>
+	    			</div>
+	    		</li>
+	    	</ul>
+	    </div>
+    </div>
+    <!-- 版权信息 -->
+    <div class="copyright_bgcolor">
+    	<div class="copyright">Copyright © 2018 XXX有限公司 版权所有 保留一切权利 鲁ICP备XXXXXXXX号-X</div>
+    </div>
+    
+</body>
+</html>

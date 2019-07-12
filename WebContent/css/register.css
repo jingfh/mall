@@ -1,0 +1,41 @@
+@charset "UTF-8";
+
+/*注册区域*/
+.register_box{width: 500px;  margin:0 auto; margin-top:42px;margin-bottom:42px;overflow: hidden;}
+/*h1标题*/
+.register_box h1{ font-size:23px; font-weight:bold; color:#333333;margin-bottom: 25px;margin-left:116px;}
+.register_box>div{overflow:hidden; margin-top:18px;}
+
+/*div:nth-child(1)规定属于其父元素的第[1]个子元素的每个 【div】 的格式：*/
+/*就是“用户”“密码”这些左侧文字*//*color:#fb4343;  红色   color:#41b6e7;  蓝色*/
+.register_box>div>div:nth-child(1){ width:120px; height:38px ;  float:left;line-height: 38px; text-align: right;margin-right: 10px;    }
+
+/*输入框格式*/
+.register_box>div input{ width:284px; height:36px;outline:none; padding-left:16px;line-height: 36px;border:1px solid #bdbdbd; float: left;display: block}
+
+
+
+
+
+/*网络协议区域格式*/
+#protocol_tip a{ color:#41b6e7;}
+#protocal{width: 15px; height: 15px; margin-top: 4px; margin-left: 100px;}
+
+/*注册按钮*/
+.register_btn{width:170px; float:left; display:block; text-align:center; font-size:20px; color:#ffffff; background-color:#b1191a ; 
+ line-height:40px; font-weight:bold;  margin-top:8px; width: 170px; height: 40px; margin-left: 100px; cursor:pointer;}
+ 
+ /*文本"已注册，找回密码"的格式,  */
+.register_box>a{line-height:60px; margin-left:20px;   color:#b1191a 
+;}
+
+/*错误验证，默认隐藏*/
+.error_tip{
+    float: left;
+    line-height: 33px;
+    color:#ff0101;
+    margin-left: 10px;
+    display: none;
+}
+
+

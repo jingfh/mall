@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<!-- 本页面需要实现的功能：
+	1.点击头部：首页>混凝土机械>。。的跳转，已添加首页跳转
+	2.上部商品名称右侧的“关注”蓝色按钮的action，添加至“我的收藏”
+	3.配送信息的省市区信息的联动，在js交互部分有说明，后期添加，目前没联动
+	4.数量的库存与数据库对应，并限制不超过库存
+	5.加入购物车 按钮action，添加至“购物车”
+	6.两个（顶部与中部推荐商品）立即购买 按钮action
+	7.为 四个 灰色箭头（顶部与右侧图片栏）添加“上下左右”动作js
+	8.点击中间部分“推荐商品”图片和右侧相关商品图片的商品详情页面的跳转，目前商品页太少
+	9.后期，不同商品详细信息、参数、评价、案例的信息修改
+	10.顶部与底部的通用框架的跳转
+ -->
+<html>
+  <head lang="en">
+    <title>商品详情</title> 
+    <meta charset="UTF-8"> 
+    <link rel="stylesheet" type="text/css" href="css/reset.css"> 
+    <link rel="stylesheet" type="text/css" href="css/common.css">
+    <link rel="stylesheet" type="text/css" href="css/product_detail.css">
+    
+    <!-- 引入require.js，注意格式 --> 
+    
+   	
+    <script src="js/require.js" defer async="true" data-main="js/product_detail_main"></script>
+    
+	
+  </head>
+  
+<body>
+	
+	<!-- 头部栏 -->
+    <header class="header_outbox">
+		<div class="header_inbox">
+	         <div class="loginbox">
+	             <p>欢迎访问Husky机械配件商城</p>
+	             <a href="index.html" target="_blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ 访问官网 ]</a>
+	             <span id="register-info"> 
+	                 <a href="login.html" class="login">&nbsp;&nbsp;&nbsp;&nbsp;登录&nbsp;&nbsp;|</a>
+	                 <!-- <img src="images/common/header_line.jpg"> -->
+	                 
+	                 <a href="register.html" class="login">&nbsp;&nbsp;&nbsp;免费注册&nbsp;&nbsp;</a>
+	             </span>
+	             <span id="login-info" style="display: none;">
+	                 <a href="information_modification.html" id="headerUsername" class="login"></a>
+	                 
+	                 <a href="#" id="headerLogout" class="login">|&nbsp;&nbsp;退出</a>
+	             </span>
+	         </div>
+             <ul class="my_action fix">
+                 <li>
+                     <a href="product_like.html">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我的关注</a>
+                 </li>
+                 <li>
+                     <img src="images/common/mix_car.png">
+                     <a href="cart.html">购物车<span id="cartQuantity">[0]</span></a>
+                 </li>
+                 <li>
+                     <a href="index.html">我的商城</a>
+                 </li>
+             </ul>
+        </div>
+    </header>
+    
+    <!-- 最上方留白处-->
+    <div class="white" style="height:28px;">
+        <p>Husky</p>
+    </div>
+    
+    <div class="action_search_box wrapper_box">
+        <a class="logo" href="index.html"></a>
+        <div class="inputbox" style="margin-top:10px;">
+        	<div>
+        		<a class="search_icon " ></a>
+            	<input type="text" id="keyword" name="keyword" placeholder="请输入您感兴趣的内容">
+           	 	<a id="searchBtn" class="searchbtn" href="javascript:search();">搜&nbsp;索</a>
+            </div>
+        </div>
+        <img class="telephonenumber" src="images/common/telephone_number.jpg" >
+    </div>
+    
+    <!--分割线-->
+	<hr style="height: 1px; border: none; border-top: 1px solid #DDD; margin: 25px 0 0px;">
+	
+	
+		<div class="content_box pr">
+			
+			<div class="productnav">
+			<!-- 
+				<span><a href="index.html">首页</a>
+				</span>
+				<span>&gt;</span>  
+				<span><a href="#">混凝土机械</a>
+				</span>
+				<span>&gt;</span> 
+				<span><a href="#">油品</a>
+				</span>
+				<span>&gt;</span> 
+				<span><a href="#">液压油</a>
+				</span>
+			 -->
+			</div>
+			
+			 
+			<!--商品详情开始-->
+			<div class="product_detail">
+	            <!--左侧内容-->
+				<div>
+				<!--商品图片 start-->
+				<div class="product_picture_list l">
+					<div >
+						<img id="mainImg" class="product_picture_img" src="" alt="" style="cursor: crosshair;">
+					</div>
+					<div >
+						<span style="margin-right:7px;">
+							<img src="images/common/left_arrow.jpg">
+						</span>
+						<div class="product_picture_table_main l">
+                            <ul id="piclist_container">
+                                
+                                <li>
+                                    <img id="productMainImage" src="" class="product_picture_selected">
+                                </li>
+                                <li>
+                                    <img id="productImage01" src="" class="" style="display:none;">
+                                </li>
+                                <li>
+                                    <img id="productImage02" src="" class="" style="display:none;">
+                                </li>
+                                <li>
+                                    <img id="productImage03" src="" class="" style="display:none;">
+                                </li>
+                                <li>
+                                    <img id="productImage04" src="" class="" style="display:none;">
+                                </li>
+                                
+                             
+                            </ul>
+						</div>
+						
+						<span style="margin-left:7px;">
+							<img src="images/common/right_arrow.jpg">
+						</span>
+					</div>
+				</div>
+				<!--商品图片 end-->
+				
+
+
+				<!--商品信息 start -->
+				<div class="product_info_list l">
+                    <!--商品标题 -->
+					<div>
+                        <h3 id="product_name_container" class="l" title="中联重科液压油200L">
+                            	Loading。。。	
+                        </h3>
+						<div class="product_attention l">
+                            <a href="javascript:void(0);" id="store_btn">
+                                <span>关注</span>
+                            </a>
+                        </div> 
+					</div>
+					<!--商品价格 -->
+					<div class="product_price_info">
+                        <span >现价:</span>
+                        <span id="productPriceContainer" dat="2828">Loading。。。</span>
+						<div >
+							<span>促销:</span>
+							<a href="#">促销9折，5桶起，包邮送回家。</a>
+						</div>
+					</div>
+					<!--产品发货-->
+					<div class="product_delivery">
+							<span>发货地：</span>
+							<span>北京市</span>
+							&nbsp;&nbsp;
+							<span>配送方式：</span>
+                            		<input type="radio" name="send_type"  checked="checked">
+                            		<label for="by_self">到付</label>
+                            		<input type="radio" name="send_type"  >
+                            		<label for="by_self">在线支付</label>
+                            &nbsp;&nbsp;
+                            <span id="freight"></span>                         
+							<br>
+							
+<!-- 这里的省市区的联动，在js交互部分有说明，后期添加，已添加。。。 -->
+<!-- 能显示效果，暂时没用到地址数据 -->
+	<!-- 
+	<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="js/distpicker.data.js"></script>
+	<script type="text/javascript" src="js/distpicker.js"></script>
+	 -->
+	
+	
+							
+							<span>配送至：</span>
+							<div id="distpicker" data-toggle="distpicker">
+								<select id="province" style="margin-right:4px;"  data-province="山东省"></select>
+								<select id="city"  style="margin-right:4px;" data-city="济南市"></select>
+								<select id="district"  style="margin-right:4px;" data-district="历城区"></select>
+							</div>
+							
+							<!-- 不用这块 -->
+							<!-- 
+							<span>
+								<select id="province" class="area" style="margin-right:4px;"><option value="">请选择...</option><option value="1">北京市</option><option value="18">天津市</option><option value="35">河北省</option><option value="219">山西省</option><option value="351">内蒙古自治区</option><option value="465">辽宁省</option><option value="580">吉林省</option><option value="650">黑龙江省</option><option value="792">上海市</option><option value="810">江苏省</option><option value="926">浙江省</option><option value="1028">安徽省</option><option value="1150">福建省</option><option value="1245">江西省</option><option selected="selected" value="1357">山东省</option><option value="1515">河南省</option><option value="1692">湖北省</option><option value="1809">湖南省</option><option value="1946">广东省</option><option value="2089">广西壮族自治区</option><option value="2213">海南省</option><option value="2240">重庆市</option><option value="2279">四川省</option><option value="2482">贵州省</option><option value="2580">云南省</option><option value="2726">西藏自治区</option><option value="2807">陕西省</option><option value="2925">甘肃省</option><option value="3026">青海省</option><option value="3078">宁夏回族自治区</option><option value="3106">新疆维吾尔自治区</option><option value="3219">台湾省</option><option value="3292">香港特别行政区</option><option value="3314">澳门特别行政区</option></select>
+								<select id="city" class="area" style="margin-right: 4px;"><option value="">请选择...</option><option value="1358">济南市</option><option value="1369">青岛市</option><option value="1382">淄博市</option><option value="1391">枣庄市</option><option value="1398">东营市</option><option selected="selected" value="1404">烟台市</option><option value="1417">潍坊市</option><option value="1430">济宁市</option><option value="1443">泰安市</option><option value="1450">威海市</option><option value="1455">日照市</option><option value="1460">莱芜市</option><option value="1463">临沂市</option><option value="1476">德州市</option><option value="1488">聊城市</option><option value="1497">滨州市</option><option value="1505">菏泽市</option></select>
+								<select id="district" class="area" style="margin-right: 4px;"><option value="">请选择...</option><option value="1405">芝罘区</option><option value="1406">福山区</option><option value="1407">牟平区</option><option value="1408">莱山区</option><option value="1409">长岛县</option><option value="1410">龙口市</option><option value="1411">莱阳市</option><option value="1412">莱州市</option><option value="1413">蓬莱市</option><option value="1414">招远市</option><option value="1415">栖霞市</option><option value="1416">海阳市</option></select>
+						        <input type="hidden" id="areaId" name="areaId" value="1405">
+				            </span>
+				             -->
+					</div>
+                    <!--商品购买相关-->
+					<div class="product_select">
+						<div>
+							<span class="l">数量：</span>
+							<div class="l">
+								<a href="javascript:void(0);" class="product_minus_2 l"></a>
+<!-- 这里设置maxlength=库存 -->
+								<input name="" id="product_num" type="text" value="1" maxlength="5" class="l" autocomplete="off">
+								<a href="javascript:void(0);" class="product_plus_1 l "></a>
+							</div>
+<!-- 在这里与数据库，库存匹配 -->
+							<p id="stock_container" class="l" style="margin-left:10px ;" >
+								（起售数量1,不可超过库存:
+								<span style="font-family:Microsoft YaHei;font-size:10px;">
+									<strong >Loading。。。</strong>
+								</span>
+								）
+							</p>
+						</div>
+                        
+						<div>
+							<p class="l">购买方式：</p>
+							<input type="hidden" id="buyType" name="buyType" value="1-1">
+							<div>
+								<a href="javascript:void(0);" dat="2828" type="1-1" data-price="￥2828.00">全额支付<i></i>
+								</a> 
+                              <!-- <img src="./images/common/selected.png"> -->  
+							</div>
+						</div>
+					</div>
+
+					<div class="product_buy">
+						<div>
+                            <a href="javascript:void(0);" id="buy">立刻购买</a>
+                        </div>
+						<div>
+                            <a href="javascript:void(0);" id="addCart">加入购物车</a>
+                        </div>							
+					</div>
+
+					<div class="pledges">
+						<div class="l" style="margin-top:3px;">
+							服务承诺：
+						</div>
+						<div class="l">
+							<div class="l">
+								<img src="images/common/pledges_01.jpg">
+							</div>
+							<div class="l">
+								<img src="images/common/pledges_02.jpg">
+							</div>
+							<div class="l">
+								<img src="images/common/pledges_03.jpg">
+							</div>
+						</div>
+					</div>
+				</div>
+                <!-- 商品信息 end -->
+
+ 
+				<!-- 推荐套装 start -->
+				<div class="recommended_package l">
+                    <h3>
+                        	推荐套装（敬请期待）
+                    </h3>
+					<div>
+						<div class=" l">
+							<div>
+								<img src="images/details/tj_left.jpg">
+							</div>
+							<div >
+								<span>中联重科液压油2...</span>
+							</div>
+						</div>
+						<div class="l"></div>
+						<div class="l">
+							<div >
+								<a href="#"><img src="images/details/tj_left_02.jpg"></a>
+							</div>
+							<div>
+								<span>发动机专用机油
+								</span>
+							</div>
+							<div>
+								<input type="checkbox" value="423" name="packageProduct" checked="checked">
+								<label for="recommended_1">
+									<span dat="328">￥328.00</span>
+								</label>
+							</div>
+						</div>
+						<div class="recommended_package_price r">
+							<div class="recommended_package_price_info">
+								<span class="recommended_package_price_text">共计：</span>
+								<span class="recommended_package_price_num"><span class="total_price" dat="3156">￥3156.00</span>
+								</span>
+							</div>
+							<a href="javascript:void(0);">
+								<div class="recommended_package_buy">
+									<div class="recommended_package_buy_btn">
+										立刻购买
+									</div>
+								</div> </a>
+						</div>
+						<div class="recommended_package_equal_sign r"></div>
+					</div>
+				</div>
+				<!-- 推荐套装 end -->
+			</div>
+			
+			<!--侧边相关配件-->
+			<div class="product_related_box l">
+				<div>
+					相关配件（敬请期待）
+				</div>
+				<div>
+                    <div>
+                        <div>
+                            <a href="#" title="中联重科液压油18L">
+                                <img src="images/details/rel_left_01.jpg"></a>
+                        </div>
+                        <div>
+                            <div>
+                                <a href="#" title="中联重科液压油18L">中联重科液压油18</a>
+                            </div>
+                            <div class="product_related_price">
+                                <span>￥279.00</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div >
+                        <div>
+                            <a href="#" title="锂基脂 ZL-2">
+                                <img src="images/details/rel_left_02.jpg"></a>
+                        </div>
+                        <div>
+                            <div>
+                                <a href="#" title="锂基脂 ZL-2">锂基脂 ZL-2</a>
+                            </div>
+                            <div class="product_related_price">
+                                <span>￥256.00</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <a href="#" title="发动机专用机油">
+                            <img src="images/details/rel_left_03.jpg"></a>
+                        </div>
+                        <div>
+                            <div>
+                                <a href="#" title="发动机专用机油">发动机专用机油</a>
+                            </div>
+                            <div class="product_related_price">
+                                <span>￥328.00</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <a href="#" title="国四底盘 专用尿素">
+                                <img src="images/details/rel_left_04.jpg">
+                            </a>
+                        </div>
+                        <div>
+                            <div>
+                                <a href="#" title="国四底盘 专用尿素" >国四底盘 专用尿素</a>
+                            </div>
+                            <div class="product_related_price">
+                                <span>￥42.00</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <a href="#" title="锂基脂 00#" >
+                            <img src="images/details/rel_left_05.jpg"></a>
+                        </div>
+                        <div>
+                            <div>
+                                <a href="#" title="锂基脂 00#">锂基脂 00#</a>
+                            </div>
+                            <div class="product_related_price">
+                                <span>￥215.00</span>
+                            </div>
+                        </div>
+                    </div>
+				</div>
+				<div>
+					<img src="images/common/arrow_up.jpg" >
+            		<img src="images/common/arrow_down.jpg" >
+				</div>
+			</div>
+            <!-- 侧边栏结束 -->
+            
+            
+            <!-- 产品详情评价 -->
+			<div class="product_tab_bar_box l">
+			
+				<!-- 顶部标签开始 -->
+				<ul class="product_tab_bar">
+					<li class="product_tab_selected" data-index="0">
+						产品详情
+					</li>
+					<li data-index="1">
+						规格参数
+					</li>
+					<li data-index="2">
+						累计评价
+<!-- 这里修改评价数量 -->
+						<span class="product_tab_num">[12]</span>
+					</li>
+					<li data-index="3">
+						案例
+					</li>
+				</ul>
+				<!-- 顶部标签结束 -->
+				
+				<!-- 具体内容开始 -->
+				<ul class="product_tab_contents">
+					<li class="product_tab_content_show">
+						<div id="detailContainer" class="product_tab_content product_details_tab">
+							<div class="product_details_tab_top">
+								<span class="product_details_tab_title">中联重科液压油200L</span>
+								<img class="product_details_tab_top_line" src="images/common/productDetailsTabTop_line.png">
+							</div>
+							<div class="product_details_tab_content">
+								<div class="introduction">
+								<p align="left">
+									<span style="font-family:Microsoft YaHei;font-size:16px;">
+										<strong>
+											<span style="font-size:18px;">特别申明：</span>
+										</strong>
+										<span style="font-size:18px;">
+											由于库存原因，该产品蓝、绿色外桶包装将根据实际情况随机发货，三个工作日左右发货，敬请谅解！
+										</span>
+									</span> 
+								</p>
+								<p align="center">&nbsp;</p>
+								<p align="left">
+									<strong style="line-height:24px;font-family:'font-size:16px;white-space:normal;">
+										<span style="font-size:18px;">产品适配主机：</span>
+									</strong>
+									<span style="font-family:Microsoft YaHei;color:#000000;font-size:18px;">
+										混凝土
+									</span>
+									<span style="font-family:'font-size:18px;white-space:normal;color:#000000;">
+										机械全系列设备
+									</span> 
+								</p>
+								<p align="center">&nbsp;</p>
+								<p align="left">
+									<strong><span style="background-color:#b8d100;font-family:;">申明：产品外包装以实际收货为准</span> </strong> 
+								</p>
+								<p align="center">&nbsp;</p>
+								<p align="center">
+									<img alt="" src="http://zoomlionmall.com/upload/image/201703/bc3a31d3-500f-4842-b674-838c79ce9fda.jpg"> 
+								</p>
+																		</div>
+							</div>
+						</div>
+					</li>
+<!-- 若需要，依据不同产品修改参数 -->
+					<li>
+						<div id="specParamContainer" class="product_tab_content">
+							<table border="1">
+								<tr>
+									<td colspan="2">
+										液压油参数
+									</td>
+								</tr>
+								 										<tr>
+									<td>
+										全称
+									</td>
+									<td>
+										道达尔液压油200L
+									</td>
+								</tr>
+								  										<tr>
+									<td>
+										型号
+									</td>
+									<td>
+										46#
+									</td>
+								</tr>
+								  										<tr>
+									<td>
+										规格
+									</td>
+									<td>
+										200L
+									</td>
+								</tr>
+								  										<tr>
+									<td>
+										品牌名称
+									</td>
+									<td>
+										道达尔
+									</td>
+								</tr>
+								  										<tr>
+									<td>
+										适用产品
+									</td>
+									<td>
+										适配各类工程机械
+									</td>
+								</tr>
+								        										<tr>
+									<td>
+										运动黏度（40℃）
+									</td>
+									<td>
+										46
+									</td>
+								</tr>
+								  										<tr>
+									<td>
+										黏度指数
+									</td>
+									<td>
+										106
+									</td>
+								</tr>
+								  										<tr>
+									<td>
+										闪点（开口）
+									</td>
+									<td>
+										230
+									</td>
+								</tr>
+								  										<tr>
+									<td>
+										倾点
+									</td>
+									<td>
+										-33
+									</td>
+								</tr>
+										      
+							</table>
+
+						</div>
+					</li>
+<!-- 累计评价，暂时不加 -->
+					<li>
+						<div class="product_tab_content">
+							<!--  <table border="0" rules="rows" id="reviewTable">  -->
+								<p align="left">
+			<!-- 插入模板 -->
+								</p>		
+							<!-- </table>  -->
+						</div>
+					</li>
+<!-- 案例，不知道是什么，暂时不加 -->
+					<li>
+						<div id= "comment_container" class="product_tab_content">
+							<!--  <table border="0" rules="rows" id="reviewTable">  -->
+								
+									<!-- 插入模板 -->
+										
+							<!-- </table>  -->
+						</div>
+					</li>
+				</ul>
+				<!-- 具体内容结束 -->
+				
+			</div>
+		</div>
+		    
+	    <!-- 底部信息 -->
+	    <div id="product_service" class="content_box clearfix">
+	    	<ul>
+	    		<li class="item l">
+	    			<p class="item_icon icon1 l"></p>
+	    			<div class="item_text l">
+	    				<p class="text_tit">真实货源</p>
+	    				<p class="text_info">一手货源&nbsp;真实存在</p>
+	    			</div>
+	    		</li>
+	    		<li class="item l">
+	    			<p class="item_icon icon2 l"></p>
+	    			<div class="item_text l">
+	    				<p class="text_tit">品质保障</p>
+	    				<p class="text_info">垂直专业&nbsp;优选厂商</p>
+	    			</div>
+	    		</li>
+	    		<li class="item l">
+	    			<p class="item_icon icon3 l"></p>
+	    			<div class="item_text l">
+	    				<p class="text_tit">服务保障</p>
+	    				<p class="text_info">专业服务团队</p>
+	    			</div>
+	    		</li>
+	    		<li class="item l">
+	    			<p class="item_icon icon4 l"></p>
+	    			<div class="item_text l">
+	    				<p class="text_tit">交易透明</p>
+	    				<p class="text_info">买卖双方面谈价格</p>
+	    			</div>
+	    		</li>
+	    	</ul>
+	    </div>
+	</div> 
+	   
+    <div class="footerbox">
+    	<div class="footer">
+    		<div class="content_box">
+    			<div class="footerinside">
+	    			<h1>新手指南</h1>
+	    			<a href="#" target="_blank">免费注册</a>
+	    			<a href="#" target="_blank">个人资料及密码</a>
+	    			<a href="#" target="_blank">商品关注</a>
+	    			<a href="#" target="_blank">查询订单</a>
+	    			<a href="#" target="_blank">购物流程</a>
+    			</div>
+    			<div class="footerinside">
+					<h1>付款/退款</h1>
+	    			<a href="#" target="_blank">在线支付</a>
+	    			<a href="#" target="_blank">银行转账</a>
+	    			<a href="#" target="_blank">发票办理</a>    		
+	    		</div>
+	    		<div class="footerinside">
+	    			<h1>配送方式</h1>
+	    			<a href="#" target="_blank">快递配送</a>
+	    			<a href="#" target="_blank">零担物流</a>
+	    		</div>
+	    		<div class="footerinside">
+	    			<h1>售后服务</h1>
+	    			<a href="#" target="_blank">退货流程</a>
+	    			<a href="#" target="_blank">退货政策</a>
+	    		</div>
+	    		<div class="footerinside">
+	    			<h1>帮助中心</h1>
+	    			<a href="#" target="_blank">常见热点问题</a>
+	    			<a href="#" target="_blank">联系我们</a>
+	    			<a href="#" target="_blank">投诉与建议</a>
+	    		</div>
+	    	</div>
+    	</div>
+    	<div class="copyright_bgcolor">
+        	<div class="copyright">Copyright © 2018 XXX有限公司 版权所有 保留一切权利 鲁ICP备XXXXXXXX号-X</div>
+       	</div>
+   	</div>
+	
+</body>
+<script id="comment-item-tpl" type="text/x-handlebars-template">
+{{#each this}}
+<p align="left">
+	<span style="font-family:Microsoft YaHei;font-size:16px;">
+		<strong>
+			<span style="font-size:18px;">【{{no}}】买家{{username}}：</span>
+		</strong>
+<!-- updated 时间 -->
+
+
+		
+		<p align="center">&nbsp;</p>
+		<span style="font-size:18px;">
+			{{comment}}
+		</span>
+	</span> 
+</p>
+{{/each}}
+</script>
+</html>

@@ -1,0 +1,40 @@
+@charset "UTF-8";
+/*color:#fb4343;  红色   color:#41b6e7;  蓝色*/
+
+/*"收货地址管理"标题*/
+.right_title{font-size: 23px;font-weight: bold;color: #333333;padding-left: 200px;margin-left:10px;margin-top:10px;}
+
+/*新地址*/
+.new_address p{color:red; margin-top: 20px;margin-left: 270px;}
+.new_address>div{margin-top:20px;margin-left:115px;float:left;}
+
+/*项目名*/
+.new_address>div>div{float:left;margin-right: 10px;margin-top:5px;}
+/*输入框*/
+.new_address>div>input{width: 600px; height: 34px; line-height: 40px; margin-right: 20px; padding-left: 10px;}
+/*地址保存按钮*/
+.new_address>input{width: 80px; height: 30px; margin-left:425px; margin-top: 30px; background-color:  #b1191a; 
+color: #fff; font-size: 14px;         float:left;}
+    
+    
+/*编辑地址，默认隐藏掉*/
+/* 符号“*” */
+.updata_address p{color:red;margin-top: 20px;margin-left: 270px;}
+/*项目栏*/
+.updata_address>div{margin-top:20px;margin-left:300px;}
+/*栏目名称*/
+.updata_address>div>div{float:left;margin-right: 10px;}
+/*输入框提示信息*/
+.updata_address>div>input{width: 470px; height: 34px; line-height: 40px; margin-right: 20px; padding-left: 10px;}
+/*“保存”按钮*/
+.updata_address>input{width: 80px; height: 30px; margin-left: 198px; margin-top: 30px; background-color: #41b5e7; color: #fff; font-size: 14px;}
+/*隐藏*/
+.updata_address{display:none;}
+
+
+/*地址table*/
+.address_table{ font-size: 16px; padding: 6px; background: #ebecf0; color: #333; font-weight: 400; text-align:center; border: 1px solid #dcdee3;}
+/*table内容格式*/
+.address_table1>td{ font-size: 14px; height: 60px; color: #333; font-weight: 400;  border: 1px solid #dcdee3;  padding: 5px 15px;}
+/*"默认地址"格式*/
+.t_default{    display: block;  width: 80px; height: 30px; line-height: 30px; text-align: center; border: 1px solid #ff5000; border-radius: 3px; background: #ffd6cc; color: red;}

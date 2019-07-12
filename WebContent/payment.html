@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>订单支付</title> 
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/common.css">
+    <link rel="stylesheet" type="text/css" href="css/payment.css">
+    
+    <!-- 引入require.js，注意格式 --> 
+   	<script src="js/require.js" defer async="true" data-main="js/payment_main"></script>
+    
+   
+</head>
+<body>
+	<!-- 头部标签 -->
+	<div>
+		<div class="action_search_box content_box">
+	    	<a class="logo" href="index.html"></a>
+	    </div>
+	    <!--与之前不同，加分割线-->
+	    <hr style="height: 1px; border: none; border-top: 1px solid #DDD; margin: 25px 0 0px;">
+    </div>
+     
+	
+    <!-- 中间支付区域 -->
+    <div>
+        <!--支付内容开始-->
+        <div class="pay_box">
+            <img src="images/common/支付二维码.png"  alt="">
+            <p class="r" id="orderInfo" >订单编号：XXXXXXXXXXXXX</p>
+            <p >卖家：Husky机械配件商城</p>
+            <p class="r" id="totalPrice">订单总额：119.00元</p>
+            <div class="pay_content">
+            	
+            	<!-- 添加积分模块 0707 -->
+            	<div style="margin-top:60px;margin-left:345px;">
+            		<span>您的目前积分为：<strong id="points">0</strong></span>
+            		
+            		<div style="margin-top:6px;"></div>
+            		<input id="use_points" type="checkbox" style="width:16px;height:16px;">
+            		<span>使用积分</span>
+            		<span style="color: #b2b2b2;margin-left: 25px;">每100积分可抵￥1.00</span>
+            		
+            	</div>
+                <div style="margin-top:42px;">
+                    <input type="radio" class="l"  checked >
+                    <img src="images/common/zhifubao.png" alt="" >
+                    <p>支付宝</p>
+                    <p class="r">支付<span id="payPrice">119.00</span>元</p>
+                </div>
+                <!-- <div>支付宝支付密码:</div>
+                <div>
+                    <input type="password" maxlength="6" >
+                </div>
+                <p >请输入6位数字支付密码</p>
+               -->
+               <div style="margin-left:120px;">
+               <form id='fm' name=alipayment action=alipay.trade.page.pay.jsp method=post>
+					<div style="display:none;" class="pay123">
+						<dd>
+							<input id="WIDout_trade_no" name="WIDout_trade_no" readonly=readonly />
+						</dd>
+						<dd>
+							<input id="WIDsubject" name="WIDsubject" readonly=readonly />
+						</dd>
+						<dd>
+							<input id="WIDtotal_amount" name="WIDtotal_amount" readonly=readonly />
+						</dd>
+						<dd>
+							<input id="WIDbody" name="WIDbody" readonly=readonly />
+						</dd>
+					</div>
+					<input class="paynow" type="submit" value="付款">    
+					<span class=" hint">如果您点击“付款”按钮，即表示您同意该次的执行操作。</span>
+				</form>
+				
+				</div>
+            </div>
+        </div>
+        <!--支付内容结束-->
+        
+        <!-- 产品服务描述 -->
+		<div class="content_box" id="product_service">
+	    	<ul>
+	    		<li class="item l">
+	    			<p class="item_icon icon1 l"></p>
+	    			<div class="item_text l">
+	    				<p class="text_tit">真实货源</p>
+	    				<p class="text_info">一手货源&nbsp;真实存在</p>
+	    			</div>
+	    		</li>
+	    		<li class="item l">
+	    			<p class="item_icon icon2 l"></p>
+	    			<div class="item_text l">
+	    				<p class="text_tit">品质保障</p>
+	    				<p class="text_info">垂直专业&nbsp;优选厂商</p>
+	    			</div>
+	    		</li>
+	    		<li class="item l">
+	    			<p class="item_icon icon3 l"></p>
+	    			<div class="item_text l">
+	    				<p class="text_tit">服务保障</p>
+	    				<p class="text_info">专业服务团队</p>
+	    			</div>
+	    		</li>
+	    		<li class="item l">
+	    			<p class="item_icon icon4 l"></p>
+	    			<div class="item_text l">
+	    				<p class="text_tit">交易透明</p>
+	    				<p class="text_info">买卖双方面谈价格</p>
+	    			</div>
+	    		</li>
+	    	</ul>
+    		<!-- 产品服务结束 -->
+    	</div>
+    </div>
+	
+    <!-- 版权信息 -->
+    <div class="copyright_bgcolor">
+    	<div class="copyright">Copyright © 2018 XXX有限公司 版权所有 保留一切权利 鲁ICP备XXXXXXXX号-X</div>
+    </div>
+    
+</body>
+<script language="javascript">
+	function GetDateNow() {
+		var vNow = new Date();
+		var sNow = "";
+		sNow += String(vNow.getFullYear());
+		sNow += String(vNow.getMonth() + 1);
+		sNow += String(vNow.getDate());
+		sNow += String(vNow.getHours());
+		sNow += String(vNow.getMinutes());
+		sNow += String(vNow.getSeconds());
+		sNow += String(vNow.getMilliseconds());
+		
+		//document.getElementById("WIDout_trade_no").value =  sNow;
+		//document.getElementById("WIDsubject").value = "";
+		//document.getElementById("WIDtotal_amount").value = "";
+	}
+	GetDateNow();
+</script>
+</html>
