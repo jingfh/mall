@@ -4,7 +4,7 @@
 # 说明
 ## 1.mall.sql 为数据库文件
 ## 2.本机运行环境：
-MyEclipse CI 2018 + Mysql 5.7 + Google Chrome Browser
+MyEclipse CI 2018 + Mysql 5.7 + tomcat 9.0 + Google Chrome Browser
 
 # 目录
 ## 一．	项目介绍
